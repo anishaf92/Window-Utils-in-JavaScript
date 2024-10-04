@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Properties and Methods</title>
+</head>
+<body>
+<h1 id="welcome"></h1>
+<script>
+window.alert("Hello! This is an alert.");
+let userConfirmed = window.confirm("Do you agree?");
+console.log(userConfirmed)
+let userInput = window.prompt("What is your name?");
+const welcomeText = document.getElementById("welcome")
+welcomeText.innerText = "Welcome "+userInput;
+</script>
+</body>
+</html>

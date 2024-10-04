@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Example</title>
+</head>
+<body>
+    <h1>Welcome to My Page!</h1>
+    <button id="showMessageBtn">Show Message After 3 Seconds</button>
+    <p id="message" style="display: none; color: green; font-weight: bold;">Hello! This message appeared after 3 seconds.</p>
+
+    <script>
+        // Select the button and message paragraph
+        const button = document.getElementById('showMessageBtn');
+        const message = document.getElementById('message');
+
+        // Add a click event listener to the button
+        button.addEventListener('click', () => {
+            // Hide the message first
+            //message.style.display = 'none';
+            
+            // Use setTimeout to show the message after 3 seconds
+            function timeDelay(){
+                message.style.display = 'block';
+            }
+            
+            setTimeout(timeDelay , 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+</body>
+</html>

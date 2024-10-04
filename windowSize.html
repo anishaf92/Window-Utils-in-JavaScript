@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Properties and Methods</title>
+</head>
+<body>
+    <h1>Window Properties and Methods Demo</h1>
+    <button onclick="showWindowProperties()">Show Window Properties</button>
+    
+
+    <script>
+        // Display the inner and outer dimensions of the window and its position
+        function showWindowProperties() {
+            alert(`
+                Viewport Width: ${window.innerWidth}
+                Viewport Height: ${window.innerHeight}
+                Window Width (including frame): ${window.outerWidth}
+                Window Height (including frame): ${window.outerHeight}
+                Window X Position (relative to screen): ${window.screenX}
+                Window Y Position (relative to screen): ${window.screenY}
+            `);
+        }
+
+        
+    </script>
+</body>
+</html>

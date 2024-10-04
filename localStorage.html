@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+        .theme-toggle {
+            padding: 10px 15px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <h1>Welcome to the Theme Switcher!</h1>
+    <button id="toggleTheme" class="theme-toggle">Switch to Dark Theme</button>
+    
+    <script>
+        // Function to apply the selected theme
+        function applyTheme(theme) {
+            document.body.className = theme;
+            // Update the button text based on the theme
+            const button = document.getElementById('toggleTheme');
+            button.textContent = theme === 'dark-theme' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+        }
+        // Function to load the theme from Local Storage
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            }
+        }
+        // Event listener for the button to toggle themes
+        document.getElementById('toggleTheme').addEventListener('click', () => {
+            const currentTheme = document.body.className;
+            const newTheme = currentTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme); // Save the new theme in Local Storage
+        });
+        // Load the theme when the page is loaded
+        window.onload = loadTheme;
+    </script>
+</body>
+</html>
